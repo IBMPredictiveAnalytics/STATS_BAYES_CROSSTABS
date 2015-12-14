@@ -1,6 +1,5 @@
 # STATS_BAYES_CROSSTABS
-# Calcuate Bayesian test of independence for two factors.
-## Calcuate Bayesian test of independence for two factors
+## Calcuate Bayesian test of independence for two factors.
 This procedure computes the Bayes factor testing independence for two factors in a crosstabulation framework.
 
 ---
