@@ -1,0 +1,126 @@
+<html>
+<head>
+<title>Bayesian Crosstabs Independence Test</title>
+<STYLE TYPE="text/css"> 
+<!-- 
+
+H1 {font-weight:bold; color:#006699; font-family:Verdana, Arial, sans-serif;font-size:125%; }
+H2 {font-weight:bold; color:#006699; font-family:Verdana, Arial, sans-serif;font-size:110%; }
+TABLE {font-size:100%;font-family:Verdana, Arial, sans-serif;}
+
+/* paragraph tags */
+.step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+.menuselection {margin-left:10px}
+.bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+.codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;font-family:"courier new",monospace; }
+
+/* inline tags */
+.code {font-family: Courier,fixed pitch;}                           /*** used to tag pieces of code (syntax, Python, R, HTML, etc.)   ***/
+.screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+.name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+.runinhead {font-weight: bold} 
+.superscript {vertical-align:super; font-size:80%}
+.subscript {vertical-align:sub; font-size:80%}
+.symbol {font-family: Symbol}
+
+--> 
+</STYLE>
+</head>
+<body>
+<h1>Bayesian Crosstabs Independence Test</h1>
+<p>The procedure calculates a crosstabulation of two factors and
+provides the Bayes factor for the independence assumption.
+</p>
+<p>The Bayes factor is the relative evidence in the data for one model over another.  In this procedure
+it is the odds that the factors are not independent.
+
+<p>Split files is not supported by this procedure.
+Statistics case weights are supported.  Cell counts are rounded
+to integers after accumulation.
+Cases with missing values are omitted from the analysis.</p>
+
+<p><span class="runinhead">Rows and Columns</span> Specify the variables to be tabulated.</p>
+<p><span class="runinhead">Sampling Plan</span> Four sampling schemes can be specified.
+<ul>
+<li>Poisson specifies that the cell counts and grand total are random with counts having
+a Poisson distribution.</li>
+<li>Joint multinomial specifies random cell counts but a fixed grand total.</li>
+<li>Independent multinomial specifies that either the row or column totals are fixed,
+and the cell counts have a multinomial distribution within each row or column.  With this
+scheme you must also specify which dimension is fixed.</li>
+<li>Hypergeometric specifies that both row and column margins are fixed.  This can only
+be used with 2 x 2 tables.</li>
+</ul>
+
+<h2>Options</h2>
+<p><span class="runinhead">Display the crosstabulation table</span> Check
+this box to display the table.</p>
+
+
+
+<p><span class="runinhead">Display posterior distribution</span>
+Check this box to display the posterior distribution of the cell counts
+</p>
+
+
+<p><span class="runinhead">Number of samples</span> Specify the
+number of iterations (samples) to be drawn in calculating the
+posterior distribution if it is to be displayed.
+</p>
+
+<p><span class="runinhead">Prior Concentration Index</span>
+This indexes the expected deviation from the null hypothesis under the alternative of
+nonindependence.  The default value of 1 indicates very little prior information.
+</p>
+
+<p><span class="runinhead">Workspace Action</span>
+Choose whether to clear the workspace at the end of the procedure or
+retain the contents for further use in an R program in this session.
+</p>
+
+<p><span class="runinhead">Save Model Workspace</span> 
+Enter a file specification to save the model workspace to a file for future use.
+</p>
+
+<h2>Additional Features</h2>
+<p>
+This dialog generates syntax for the STATS BAYES CROSSTABS extension command. To display syntax help for this command,
+run the following syntax:
+</p>
+<p class="codeblock">STATS BAYES CROSSTABS /HELP.</p>
+<p>In Statistics version 23 or later, you can place the cursor within the command in the Syntax Editor and press F1.</p>
+
+<h2>Acknowledgements</h2>
+<p>This procedure uses the R BayesFactor package.<br/>
+Richard D. Morey and Jeffrey N. Rouder. BayesFactor: Computation of Bayes Factors for
+  Common Designs.<br/>
+The specific package version is indicated in the procedure output.
+</p>
+
+<h2>References</h2>
+<p>For a brief explanation of what a Bayes factor is, see
+http://bayesfactor.blogspot.com/2014/02/the-bayesfactor-package-this-blog-is.html</p>
+<p>Rouder, J. N., Morey, R. D., Speckman, P. L., Province, J. M., (2012) Default Bayes Factors for ANOVA Designs. Journal of Mathematical Psychology. 56. p. 356-374.</p>
+<p>Jamil1, Tahira, , Alexander Ly, Richard D. Morey, Jonathon Love,
+Maarten Marsman, and Eric-Jan Wagenmakers, Default "Gunel and Dickey" Bayes Factors for
+Contingency Tables, https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0CB0QFjAAahUKEwi9y-Dx2avIAhWGkQ0KHafPBqQ&url=http%3A%2F%2Fwww.ejwagenmakers.com%2Fsubmitted%2FJamilEtAlGunelDickeySubm.pdf&usg=AFQjCNFxqRLWW6PYxRoIBoXjB8hQ4E782A&sig2=kGmIjQxly_3o9e8xlUMiQA&bvm=bv.104317490,d.eXY, 2015.
+</p>
+<p>See also the help for the R BayesFactor package.  To do this, run this code
+in a syntax window and click on the contingencyTableBF link</p>
+<p class="codeblock">
+begin program r.<br/>
+library(BayesFactor)<br/>
+help(BayesFactor)<br/>
+end program.<br/>
+</p>
+
+<h2>Requirements</h2>
+This command requires the R Essentials and the R BayesFactor package
+You can download the Essentials via the SPSS Community website at www.ibm.com/developerworks/spssdevcentral.
+</p>
+  <hr
+  <p style="font-family:Verdana, Arial, sans-serif;font-size:80%;">
+  © Copyright IBM Corp. 2015</p>
+</body>
+</html>
+

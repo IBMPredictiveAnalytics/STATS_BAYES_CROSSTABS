@@ -1,0 +1,15 @@
+Name: STATS BAYES CROSSTABS
+Dialog-Specs: STATS_BAYES_CROSSTABS.spd
+Command-Specs: STATS_BAYES_CROSSTABS.xml
+Code-Files: STATS_BAYES_CROSSTABS.R
+Misc-Files: extsyntax.css,markdown.html,IBMdialogicon.png
+Summary: Calcuate Bayesian test of independence for two factors
+Description: This procedure computes the Bayes factor testing independ
+ ence for two factors in a crosstabulation framework.
+Author: JKP, IBM SPSS
+Version: 1.0.0
+Product-Version: 18
+Date: 10/5/2015
+Categories: spss, Bayes, independence
+Plugins: R
+R-Packages: BayesFactor
