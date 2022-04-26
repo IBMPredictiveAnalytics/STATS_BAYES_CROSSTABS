@@ -7,7 +7,7 @@ Summary: Calcuate Bayesian test of independence for two factors
 Description: This procedure computes the Bayes factor testing independ
  ence for two factors in a crosstabulation framework.
 Author: JKP, IBM SPSS
-Version: 1.0.0
+Version: 1.0.1
 Product-Version: 18
 Date: 10/5/2015
 Categories: spss, Bayes, independence
