@@ -1,4 +1,5 @@
 Name: STATS BAYES CROSSTABS
+Display-Name: Bayesian Test of Independence
 Dialog-Specs: STATS_BAYES_CROSSTABS.spd
 Command-Specs: STATS_BAYES_CROSSTABS.xml
 Code-Files: STATS_BAYES_CROSSTABS.R
